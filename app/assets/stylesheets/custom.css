@@ -15,7 +15,7 @@ body {
   margin-top: 40px;
 }
 
-.container {
+.jumbotron {
   background-image: url("home-container-image.avif");
   background-position: center center;
   background-size: cover;

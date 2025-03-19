@@ -1,3 +1,32 @@
+body {
+  background-color: lightgrey;
+}
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#home-container {
+  margin-top: 40px;
+}
+
+.container {
+  background-image: url("home-container-image.avif");
+  background-position: center center;
+  background-size: cover;
+  height: 400px;
+  border-radius: 5px;
+}
+
 .navbar {
-  background-color: rgb(255, 196, 102) !important;
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
 }

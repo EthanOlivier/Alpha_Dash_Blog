@@ -1,5 +1,7 @@
 body {
   background-color: lightgrey;
+  min-height: 100vh;
+  margin: 0;
 }
 
 #logo {
@@ -13,6 +15,11 @@ body {
 
 #home-container {
   margin-top: 40px;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  margin-top: auto;
 }
 
 .jumbotron {

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-10">
+            <%= render "Shared/errors", obj: @user %>
+
+            <%= form_with(model: @user, class: "shadow p-3 mb-3 mt-3 bg-white rounded", local: true, data: { turbo: false }) do |f| %>
+                <%= f.text_field :username, class: "form-control shadow rounded mb-3", placeholder: "Enter a username" %>
+                <%= f.email_field :email, class: "form-control shadow rounded mb-3", placeholder: "Enter your email address" %>
+                <%= f.text_field :password, class: "form-control shadow rounded mb-3", placeholder: "Choose a password" %>
+                <%= f.submit class: "form-control btn btn-secondary btn-lg shadow rounded"%>
+            <% end %>
+        </div>
+
+        <div class="mb-3">
+            <%= link_to "[ Cancel and Return to Articles Listing ]", articles_path, class: "row justify-content-center text-decoration-none text-secondary mt-4" %>
+        </div>
+    </div>
+</div>

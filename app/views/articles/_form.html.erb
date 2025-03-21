@@ -4,8 +4,8 @@
             <%= render "Shared/errors", obj: @article %>
 
             <%= form_with(model: @article, class: "shadow p-3 mb-3 mt-3 bg-white rounded", local: true, data: { turbo: false }) do |f| %>
-                <%= f.text_field :title, class: "form-control shadow rounded mb-3", placeholder: "Title" %>
-                <%= f.text_area :description, class: "form-control pb-5 shadow rounded mb-3", placeholder: "Description" %>
+                <%= f.text_field :title, class: "form-control shadow rounded mb-3", placeholder: "Title", autocomplete: :off %>
+                <%= f.text_area :description, class: "form-control pb-5 shadow rounded mb-3", placeholder: "Description", autocomplete: :off %>
                 <%= f.submit class: "form-control btn btn-secondary btn-lg shadow rounded"%>
             <% end %>
         </div>

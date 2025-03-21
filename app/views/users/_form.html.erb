@@ -4,10 +4,10 @@
             <%= render "Shared/errors", obj: @user %>
 
             <%= form_with(model: @user, class: "shadow p-3 mb-3 mt-3 bg-white rounded", local: true, data: { turbo: false }) do |f| %>
-                <%= f.text_field :username, class: "form-control shadow rounded mb-3", placeholder: "Enter a username" %>
-                <%= f.email_field :email, class: "form-control shadow rounded mb-3", placeholder: "Enter your email address" %>
-                <%= f.text_field :password, class: "form-control shadow rounded mb-3", placeholder: "Choose a password" %>
-                <%= f.submit "Sign up", class: "form-control btn btn-secondary btn-lg shadow rounded"%>
+                <%= f.text_field :username, class: "form-control shadow rounded mb-3", placeholder: "Enter a username", autocomplete: :off %>
+                <%= f.email_field :email, class: "form-control shadow rounded mb-3", placeholder: "Enter your email address", autocomplete: :off %>
+                <%= f.text_field :password, class: "form-control shadow rounded mb-3", placeholder: "Choose a password", autocomplete: :off %>
+                <%= f.submit (@user.new_record? ? " Sign Up" : "Update Account"), class: "form-control btn btn-secondary btn-lg shadow rounded" %>
             <% end %>
         </div>
 

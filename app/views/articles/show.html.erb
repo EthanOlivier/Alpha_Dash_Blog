@@ -4,9 +4,12 @@
     <div class="row justify-content-md-center">
         <div class="col-8 mt-4">
             <div class="card text-center shadow mb-5 bg-white rounded">
-                <h5 class="card-header">By: <em><%= @article.user.username %></em></h5>
+                <div class="card-header d-flex justify-content-center align-items-center">
+                    <%= link_to avatar_for(@article.user, size: "50x50"), @article.user, class: "me-4" %>
+                    <%= link_to @article.user.username, @article.user, class: "text-decoration-none text-dark" %>
+                </div>
                 <div class="card-body">
-                    <div class="card-text text-start"><%= simple_format(@article.description) %></div>
+                    <div class="card-text text-start mt-3"><%= simple_format(@article.description) %></div>
                     <%= link_to "Edit", edit_article_path(@article), class: "btn btn-info" %>
                     <%= link_to "Delete", article_path(@article), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure you would like to delete this article?" }, class: "btn btn-danger" %>
                     <%= link_to "Return", articles_path, class: "btn btn-warning" %>

@@ -18,12 +18,12 @@
                         <li><%= link_to "View Articles", articles_path, class: "dropdown-item" %></li>
                     </ul>
                 </li>
-<%
-=begin %>       <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                <li class="nav-item">
+                    <%= link_to "Log in", login_path, class: "nav-link" %>
                 </li>
-<%
-=end %>  
+                <li class="nav-item">
+                    <%= link_to "Log out", logout_path, class: "nav-link", data: {turbo_method: :delete} %>
+                </li>
             </ul>
 <%
 =begin %>   <form class="d-flex" role="search">

@@ -13,7 +13,7 @@
                             class: "text-success text-decoration-none" %></h5>
                         <p class="card-text"><%= truncate(article.description, length: 50) %></p>
                         <%= link_to "View", article_path(article), class: "btn btn-success" %>
-                        <% if logged_in? && current_user == article.user %>
+                        <% if logged_in? && (current_user == article.user || current_user.admin?) %>
                             <%= link_to "Edit", edit_article_path(article), class: "btn btn-info" %>
                             <%= link_to "Delete", article_path(article), method: :delete, 
                                 data: { turbo_method: :delete, turbo_confirm: "Are you sure you would like to delete this article?" }, 

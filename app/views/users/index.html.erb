@@ -12,8 +12,10 @@
                     <p class="card-text mt-2"><%= pluralize(user.articles.count, "article") %></p>
                     <div class="card-body">
                         <%= link_to "View Profile", user, class: "btn btn-success" %>
-                        <% if logged_in? && current_user == user %>
+                        <% if logged_in? && (current_user == user || current_user.admin?) %>
                             <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-info" %>
+                            <%= link_to "Delete Profile", user, class: "btn btn-danger", method: :delete, 
+                                data: { turbo_method: :delete, turbo_confirm: "Are you sure you would like to delete your profile? This action is perminant and cannot be undone!" } %>
                         <% end %>
                     </div>
                     <div class="card-footer text-muted">

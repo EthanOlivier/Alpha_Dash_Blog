@@ -6,6 +6,9 @@
             <%= form_with(model: @article, class: "shadow p-3 mb-3 mt-3 bg-white rounded", local: true, data: { turbo: false }) do |f| %>
                 <%= f.text_field :title, class: "form-control shadow rounded mb-3", placeholder: "Title", autocomplete: :off %>
                 <%= f.text_area :description, class: "form-control pb-5 shadow rounded mb-3", placeholder: "Description", autocomplete: :off %>
+                <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                                    { prompt: "Select your category from the list below (can be empty) (hold cmd/ctrl to select multiple)" },
+                                    { multiple: true, size: 5, class: "form-select shadow rounded mb-3" }) %>
                 <%= f.submit class: "form-control btn btn-secondary btn-lg shadow rounded"%>
             <% end %>
         </div>

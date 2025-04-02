@@ -6,7 +6,7 @@ class CreateCategoryTest < ActionDispatch::IntegrationTest
                               password: "password", admin: true)
     sign_in(@admin_user)
   end
-  test "Get New Category and Create New Categor Form" do
+  test "Get New Category and Create New Category Form" do
     get "/categories/new"
     assert :success
     assert_difference("Category.count", 1) do

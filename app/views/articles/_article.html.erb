@@ -7,6 +7,9 @@
                         <%= link_to user_path(article.user), class: "text-decoration-none text-dark" do %>
                             By: <em><%= article.user.username %></em>
                         <% end %>
+                        <% if article.categories.any? %>
+                            <div><%= render article.categories %></div>
+                        <% end %>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><%= link_to article.title, article_path(article), 
